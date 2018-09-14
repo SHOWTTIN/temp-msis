@@ -12,15 +12,29 @@ section h2 {
   font-size: 10pt;
   text-transform: uppercase;
   color: #999;
+  margin-top: 1em;
+  margin-bottom: 0;
 }
 
 section .ban {
   font-size: 20pt;
   color: rgb(35, 95, 163);
   font-weight: bold;
+  margin-top: 0;
 }
 
+#taskTable > tbody > tr{
+  border-left: 12px solid #eee;
+  cursor: pointer;
+}
 
+#taskTable.table-hover > tbody > tr:hover {
+
+}
+
+#taskTable > tbody > tr.current_sprint{
+  border-left: 12px solid rgb(35,95,163);
+}
 /**table sort**/
 th[role=columnheader]:not(.no-sort) {
 	cursor: pointer;

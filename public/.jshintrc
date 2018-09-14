@@ -1,0 +1,11 @@
+{
+  "asi": true,
+  "esversion":6,
+  "strict":"implied",
+  "browser":true,
+  "devel":true,
+  "globals":{
+    "vue":true,
+    "moment":true
+  }
+}
