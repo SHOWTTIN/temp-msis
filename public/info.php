@@ -1,0 +1,8 @@
+static content
+<?php
+phpinfo();
+
+
+
+
+ ?>
