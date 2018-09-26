@@ -1,12 +1,11 @@
-USE dashboard;
 
 DROP TABLE IF EXISTS Work;
 
 CREATE TABLE Work(
-  work_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   team_id INT NOT NULL,
   task_id INT NOT NULL,
-  work_start DATETIME NOT NULL,
+  start_date DATETIME NOT NULL,
   hours DECIMAL(3,1) NOT NULL,
   -- tz VARCHAR(10), --TODO? Too messy to deal with time zones?
   completion_estimate int NOT NULL CHECK(0 <= completion_estimate <= 100)
@@ -40,5 +39,3 @@ INSERT INTO Work (id, team_id, task_id, start_date, hours, completion_estimate)
 VALUES (5, 2, 1, '2018-08-01 09:30', 4, 80);
 INSERT INTO Work (id, team_id, task_id, start_date, hours, completion_estimate)
 VALUES (6, 2, 1, '2018-08-03 14:30', 3.5, 85);
-
-)
