@@ -11,7 +11,7 @@ public $hours;
 public $completion_estimate;
 
 public function  __construct($row)  {
-  $this->id = intval($row['id']);
+  $this->id = isset($row['id']) ? intval($row['id']) : null;
 
   $this->task_id = intval($row['task_id']);
   $this->team_id = intval($row['team_id']);
@@ -30,6 +30,24 @@ public function  __construct($row)  {
   $this->completion_estimate = intval($row['completion_estimate']);
 
   }
+
+public function create(){
+  $db = new PDO(DB_SERVER, DB_USER, DB_PW);
+
+  $sql = 'INSERT INTO Work(team_id, task_id, start_date, hours, completion_estimate)
+      VALUES (?,?,?,?,?)';
+
+  $statement = $db->prepare($sql);
+  $success = $statement -> executed([
+    $this->team_id,
+    $this->task_id,
+    $this->start,
+    $this->hours,
+    $this->completion_estimate]
+  );
+  $this->id = $db->lastInsertId();
+}
+
 public static function getWorkByTaskId(int $taskId){
   //1. connect to a database;
   $db = new PDO(DB_SERVER, DB_USER, DB_PW);

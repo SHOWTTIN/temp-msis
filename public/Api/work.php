@@ -1,6 +1,12 @@
 <?php
 
-require '.../.../app/common/php'
+require '.../.../app/common.php'
+
+IF ($_SERVER ['REQUEST_METHOD'] == 'POST'){
+  require 'workPost.php';
+  exit;
+}
+
 
 $taskId=intval($_GET['taksId'] ?? 0);
 
