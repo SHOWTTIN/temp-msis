@@ -70,23 +70,19 @@ var tasksApp = new Vue({
     diffAsHours() {
       return 0 //moment().duration(end.diff(startTime)).asHours();
     },
-    datetimeFormat(d) {
-      d = d || moment();
-      return moment(d).format('YYYY-MM-DD[T]HH:MM');
-    },
     getEmptyWorkForm() {
       return {
         start: moment().format('YYYY-MM-DD'),
-        start_time: moment().format('HH:MM'),
+        start_time: moment().format('HH:mm'),
         stop: moment().format('YYYY-MM-DD'),
-        stop_time: moment().format('HH:MM'),
+        stop_time: moment().format('HH:mm'),
         team_id: null,
         task_id: this.task.id,
         completion_estimate: 0
       }
     },
     prettyDate(d) {
-      return moment(d).format('YYYY-MM-DD HH:MM')
+      return moment(d).format('YYYY-MM-DD HH:mm')
     }
   },
   created () {
