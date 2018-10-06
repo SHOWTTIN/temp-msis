@@ -14,51 +14,9 @@ var tasksApp = new Vue({
       perc_complete: '',
       current_sprint : ''
     },
-    work: [
-      // {
-      //   id: 0,
-      //   start: '',
-      //   stop: '',
-      //   hours: '',
-      //   completion_estimate: ''
-      // }
-      {
-        "id": 101,
-        "start": "2018-07-29T08:30",
-        "stop": "2018-07-29T11:30",
-        "hours": 3,
-        "completion_estimate": 0.10
-      },
-      {
-        "id": 102,
-        "start": "2018-07-29T13:30",
-        "stop": "2018-07-29T16:30",
-        "hours": 3,
-        "completion_estimate": 0.25
-      },
-      {
-        "id": 103,
-        "start": "2018-07-30T08:30",
-        "stop": "2018-07-30T11:30",
-        "hours": 3,
-        "completion_estimate": 0.5
-      },
-      {
-        "id": 104,
-        "start": "2018-08-01T09:30",
-        "stop": "2018-08-01T13:30",
-        "hours": 4,
-        "completion_estimate": 0.8
-      },
-      {
-        "id": 105,
-        "start": "2018-08-03T14:30",
-        "stop": "2018-08-03T18:30",
-        "hours": 4,
-        "completion_estimate": 0.85
-      }
-    ],
-    workForm: { }   // populated by this.getEmptyWorkForm()
+    work: [ ],
+    workForm: { },// populated by this.getEmptyWorkForm()
+    teamLink: [] //all the teams
   },
   computed: {
     workSpan () {
@@ -105,6 +63,7 @@ var tasksApp = new Vue({
       return {
         start: this.datetimeFormat(),
         stop: this.datetimeFormat(),
+        teamList: null,
         completion_estimate: 0
       }
     },
@@ -131,5 +90,20 @@ var tasksApp = new Vue({
 
     // TODO: Fetch task-specific data
     // fetch('api/task?id=4')
+    fetch('api/work.php?taskId='+taskId)
+    .then( response => response.json())
+    .then (json => {tasksApp.work = json;})
+    .catch (err => {
+      console.log('WORK FETCH ERROR:');
+      console.log(err);
+    })
+
+    fetch('api/team.php')
+    .then( response => response.json())
+    .then (json => {tasksApp.teamList = json;})
+    .catch (err => {
+      console.log('TEAM LIST ERROR:');
+      console.log(err);
+    })
   }
 })
