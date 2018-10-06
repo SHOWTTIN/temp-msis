@@ -5,7 +5,8 @@ class Team{
 
   public function __construct ($data){
     $this->id = intval($data['id']);
-    $this->name = $data['name']);
+    $this->name = $data['name'])
+    $this -> hourly_rate = floatval($data['hourly_rate']);
   }
 
   public static function findAll(){
