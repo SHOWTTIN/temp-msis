@@ -80,7 +80,3 @@ public static function getWorkByTaskId(int $taskId){
 
 
 }
-
-
-
-  ?>
