@@ -51,31 +51,31 @@ CREATE TABLE Tasks (
    current_sprint BOOLEAN
 );
 
-INSERT INTO 'Tasks' ('id', 'title', 'type', 'size', 'team_id', 'open_date', 'close_date', 'status', 'current_sprint') VALUES (1,'Update unit tests', 'Epic','L',1,'2018-07-21', null, 'Open', 1);
-INSERT INTO 'Tasks' ('id', 'title', 'type', 'size', 'team_id', 'open_date', 'close_date', 'status', 'current_sprint') VALUES (2, 'Build UI', 'Story', 'XS', 4, '2018-03-23', null, 'Open', 1);
-INSERT INTO 'Tasks' ('id', 'title', 'type', 'size', 'team_id', 'open_date', 'close_date', 'status', 'current_sprint') VALUES (3, 'Fix permissions leading to privacy leak', 'Bug', 'L', 2, '2018-06-15', null, 'Open', 0);
-INSERT INTO 'Tasks' ('id', 'title', 'type', 'size', 'team_id', 'open_date', 'close_date', 'status', 'current_sprint') VALUES (4, 'Evaluate accessibility to screen-readers', 'Epic', '2XL', 2, '2018-03-03', '2018-09-16', 'Closed', 0);
-INSERT INTO 'Tasks' ('id', 'title', 'type', 'size', 'team_id', 'open_date', 'close_date', 'status', 'current_sprint') VALUES (5, 'Correct repeated 404 errors in settings', 'Bug', 'S', 3, '2018-01-21', null, 'Started', 0);
-INSERT INTO 'Tasks' ('id', 'title', 'type', 'size', 'team_id', 'open_date', 'close_date', 'status', 'current_sprint') VALUES (6, 'Prepare for internationalization', 'Epic', 'XL', 1, '2018-05-29', null, 'On Hold', 0);
-INSERT INTO 'Tasks' ('id', 'title', 'type', 'size', 'team_id', 'open_date', 'close_date', 'status', 'current_sprint') VALUES (7, 'Update password hashing from MD5', 'Story', 'M', 4, '2018-07-27', null, 'On Hold', 1);
-INSERT INTO 'Tasks' ('id', 'title', 'type', 'size', 'team_id', 'open_date', 'close_date', 'status', 'current_sprint') VALUES (8, 'Build CRUD for vendor product models', 'Story', 'L', 2, '2018-05-11', '2018-09-16', 'Closed', 0);
-INSERT INTO 'Tasks' ('id', 'title', 'type', 'size', 'team_id', 'open_date', 'close_date', 'status', 'current_sprint') VALUES (9, 'Remove unused vendor packages; possible hole', 'Bug', 'XL', 2, '2018-06-12', , 'Started', 0);
-INSERT INTO 'Tasks' ('id', 'title', 'type', 'size', 'team_id', 'open_date', 'close_date', 'status', 'current_sprint') VALUES (10, 'Provide error messages on timeout', 'Bug', 'L', 1, '2017-12-29', null , 'Started', 0);
-INSERT INTO 'Tasks' ('id', 'title', 'type', 'size', 'team_id', 'open_date', 'close_date', 'status', 'current_sprint') VALUES (11, 'Two-factor authentication', 'Story', 'M', 4, '2018-04-23', '2018-10-03', 'Closed', 0);
-INSERT INTO 'Tasks' ('id', 'title', 'type', 'size', 'team_id', 'open_date', 'close_date', 'status', 'current_sprint') VALUES (12, 'Review automated test suite', 'Epic', 'M', 1, '2018-02-22', null, 'Started', 1);
-INSERT INTO 'Tasks' ('id', 'title', 'type', 'size', 'team_id', 'open_date', 'close_date', 'status', 'current_sprint') VALUES (13, 'Out of memory error for Win7/IE7', 'Bug', 'XS', 2, '2018-02-28', , 'Open', 1);
-INSERT INTO 'Tasks' ('id', 'title', 'type', 'size', 'team_id', 'open_date', 'close_date', 'status', 'current_sprint') VALUES (14, 'Patch over temporary middleware regression', 'Bug', 'S', 2, '2017-12-23', null, 'Open', 0);
-INSERT INTO 'Tasks' ('id', 'title', 'type', 'size', 'team_id', 'open_date', 'close_date', 'status', 'current_sprint') VALUES (15, '0-Day: Log in as any user', 'Bug', 'S', 3, '2018-06-06', null, 'Started', 1);
-INSERT INTO 'Tasks' ('id', 'title', 'type', 'size', 'team_id', 'open_date', 'close_date', 'status', 'current_sprint') VALUES (16, 'Require SSL/TLS', 'Story', 'L', 3, '2018-02-25', null, 'Open', 0);
-INSERT INTO 'Tasks' ('id', 'title', 'type', 'size', 'team_id', 'open_date', 'close_date', 'status', 'current_sprint') VALUES (17, 'Update to current middelware', 'Story', 'XS', 4, '2018-07-30', null, 'Open', 0);
-INSERT INTO 'Tasks' ('id', 'title', 'type', 'size', 'team_id', 'open_date', 'close_date', 'status', 'current_sprint') VALUES (18, 'Apply ACL to archival data', 'Story', 'L', 2, '2018-02-15', null, 'On Hold', 1);
-INSERT INTO 'Tasks' ('id', 'title', 'type', 'size', 'team_id', 'open_date', 'close_date', 'status', 'current_sprint') VALUES (19, 'Update copyright year', 'Story', 'XS', 1, '2018-02-15', null, 'Open', 1);
-INSERT INTO 'Tasks' ('id', 'title', 'type', 'size', 'team_id', 'open_date', 'close_date', 'status', 'current_sprint') VALUES (20, 'Site breaks when using trackpad', 'Bug', 'L', 4, '2018-02-20', null, 'Open', 1);
-INSERT INTO 'Tasks' ('id', 'title', 'type', 'size', 'team_id', 'open_date', 'close_date', 'status', 'current_sprint') VALUES (21, 'Document API for public release', 'Epic', '2XL', 4, '2018-02-26', '2018-10-01', 'Closed', 1);
-INSERT INTO 'Tasks' ('id', 'title', 'type', 'size', 'team_id', 'open_date', 'close_date', 'status', 'current_sprint') VALUES (22, 'Star-schemas for ETL', 'Story', 'XL', 1, '2018-06-23', null, 'Started', 0);
-INSERT INTO 'Tasks' ('id', 'title', 'type', 'size', 'team_id', 'open_date', 'close_date', 'status', 'current_sprint') VALUES (23, 'Touch events not regognized on privacy settings page', 'Bug', 'M', 4, '2018-05-24', null, 'On Hold', 0);
-INSERT INTO 'Tasks' ('id', 'title', 'type', 'size', 'team_id', 'open_date', 'close_date', 'status', 'current_sprint') VALUES (24, 'Complete feedback survey (10/10)', 'Story', 'L', 1, '2018-05-06', '2018-09-25', 'Closed', 1);
-INSERT INTO 'Tasks' ('id', 'title', 'type', 'size', 'team_id', 'open_date', 'close_date', 'status', 'current_sprint') VALUES (25, 'Transition to new CI/DevOps', 'Epic', 'XL', 3, '2018-05-23', null, 'Open', 1);
+INSERT INTO Tasks (id, title, type, size, team_id, open_date, close_date, status, current_sprint) VALUES (1,'Update unit tests', 'Epic','L',1,'2018-07-21', null, 'Open', 1);
+INSERT INTO Tasks (id, title, type, size, team_id, open_date, close_date, status, current_sprint) VALUES (2, 'Build UI', 'Story', 'XS', 4, '2018-03-23', null, 'Open', 1);
+INSERT INTO Tasks (id, title, type, size, team_id, open_date, close_date, status, current_sprint) VALUES (3, 'Fix permissions leading to privacy leak', 'Bug', 'L', 2, '2018-06-15', null, 'Open', 0);
+INSERT INTO Tasks (id, title, type, size, team_id, open_date, close_date, status, current_sprint) VALUES (4, 'Evaluate accessibility to screen-readers', 'Epic', '2XL', 2, '2018-03-03', '2018-09-16', 'Closed', 0);
+INSERT INTO Tasks (id, title, type, size, team_id, open_date, close_date, status, current_sprint) VALUES (5, 'Correct repeated 404 errors in settings', 'Bug', 'S', 3, '2018-01-21', null, 'Started', 0);
+INSERT INTO Tasks (id, title, type, size, team_id, open_date, close_date, status, current_sprint) VALUES (6, 'Prepare for internationalization', 'Epic', 'XL', 1, '2018-05-29', null, 'On Hold', 0);
+INSERT INTO Tasks (id, title, type, size, team_id, open_date, close_date, status, current_sprint) VALUES (7, 'Update password hashing from MD5', 'Story', 'M', 4, '2018-07-27', null, 'On Hold', 1);
+INSERT INTO Tasks (id, title, type, size, team_id, open_date, close_date, status, current_sprint) VALUES (8, 'Build CRUD for vendor product models', 'Story', 'L', 2, '2018-05-11', '2018-09-16', 'Closed', 0);
+INSERT INTO Tasks (id, title, type, size, team_id, open_date, close_date, status, current_sprint) VALUES (9, 'Remove unused vendor packages; possible hole', 'Bug', 'XL', 2, '2018-06-12', , 'Started', 0);
+INSERT INTO Tasks (id, title, type, size, team_id, open_date, close_date, status, current_sprint) VALUES (10, 'Provide error messages on timeout', 'Bug', 'L', 1, '2017-12-29', null , 'Started', 0);
+INSERT INTO Tasks (id, title, type, size, team_id, open_date, close_date, status, current_sprint) VALUES (11, 'Two-factor authentication', 'Story', 'M', 4, '2018-04-23', '2018-10-03', 'Closed', 0);
+INSERT INTO Tasks (id, title, type, size, team_id, open_date, close_date, status, current_sprint) VALUES (12, 'Review automated test suite', 'Epic', 'M', 1, '2018-02-22', null, 'Started', 1);
+INSERT INTO Tasks (id, title, type, size, team_id, open_date, close_date, status, current_sprint) VALUES (13, 'Out of memory error for Win7/IE7', 'Bug', 'XS', 2, '2018-02-28', , 'Open', 1);
+INSERT INTO Tasks (id, title, type, size, team_id, open_date, close_date, status, current_sprint) VALUES (14, 'Patch over temporary middleware regression', 'Bug', 'S', 2, '2017-12-23', null, 'Open', 0);
+INSERT INTO Tasks (id, title, type, size, team_id, open_date, close_date, status, current_sprint) VALUES (15, '0-Day: Log in as any user', 'Bug', 'S', 3, '2018-06-06', null, 'Started', 1);
+INSERT INTO Tasks (id, title, type, size, team_id, open_date, close_date, status, current_sprint) VALUES (16, 'Require SSL/TLS', 'Story', 'L', 3, '2018-02-25', null, 'Open', 0);
+INSERT INTO Tasks (id, title, type, size, team_id, open_date, close_date, status, current_sprint) VALUES (17, 'Update to current middelware', 'Story', 'XS', 4, '2018-07-30', null, 'Open', 0);
+INSERT INTO Tasks (id, title, type, size, team_id, open_date, close_date, status, current_sprint) VALUES (18, 'Apply ACL to archival data', 'Story', 'L', 2, '2018-02-15', null, 'On Hold', 1);
+INSERT INTO Tasks (id, title, type, size, team_id, open_date, close_date, status, current_sprint) VALUES (19, 'Update copyright year', 'Story', 'XS', 1, '2018-02-15', null, 'Open', 1);
+INSERT INTO Tasks (id, title, type, size, team_id, open_date, close_date, status, current_sprint) VALUES (20, 'Site breaks when using trackpad', 'Bug', 'L', 4, '2018-02-20', null, 'Open', 1);
+INSERT INTO Tasks (id, title, type, size, team_id, open_date, close_date, status, current_sprint) VALUES (21, 'Document API for public release', 'Epic', '2XL', 4, '2018-02-26', '2018-10-01', 'Closed', 1);
+INSERT INTO Tasks (id, title, type, size, team_id, open_date, close_date, status, current_sprint) VALUES (22, 'Star-schemas for ETL', 'Story', 'XL', 1, '2018-06-23', null, 'Started', 0);
+INSERT INTO Tasks (id, title, type, size, team_id, open_date, close_date, status, current_sprint) VALUES (23, 'Touch events not regognized on privacy settings page', 'Bug', 'M', 4, '2018-05-24', null, 'On Hold', 0);
+INSERT INTO Tasks (id, title, type, size, team_id, open_date, close_date, status, current_sprint) VALUES (24, 'Complete feedback survey (10/10)', 'Story', 'L', 1, '2018-05-06', '2018-09-25', 'Closed', 1);
+INSERT INTO Tasks (id, title, type, size, team_id, open_date, close_date, status, current_sprint) VALUES (25, 'Transition to new CI/DevOps', 'Epic', 'XL', 3, '2018-05-23', null, 'Open', 1);
 
 -- we left off a column
 ALTER TABLE Tasks
