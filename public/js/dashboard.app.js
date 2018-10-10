@@ -61,7 +61,7 @@ completeClass: function(task){
 },
 
 fetchTasks(){
-  fetch ('https://raw.githubusercontent.com/tag/iu-msis/dev/public/p1-tasks.json ')
+  fetch ('https://raw.githubusercontent.com/tag/iu-msis/dev/app/data/p1-tasks.json ')
   .then(function successCallback(response) {return response.json()})
   .then(function successCallback(json) {dashboardApp.tasks = json})
   .catch(function(err) {
@@ -70,23 +70,46 @@ fetchTasks(){
   });
 },
 fetchProject(){
-    fetch('https://raw.githubusercontent.com/tag/iu-msis/dev/public/project1.json')
+    fetch('https://raw.githubusercontent.com/tag/iu-msis/dev/app/data/project1.json')
     .then( response => response.json())
-    .then (json => {dashboardApp.project = json;})
+    .then (json => {dashboardApp.project = json})
     .catch (err => {
       console.log('PROJECT FETCH ERROR:');
       console.log(err);
     })
   },
+  fetchProjectWork(pid){
+    fetch('api/workHours?projectId='+pid)
+    .then( response => response.json())
+    .then (json => {
+      dashboardApp.workHours = json;
+      this.formatWorkHoursData();
+      //this.buildEffortChart();
+    })
+    .catch (err => {
+      console.log('PROJECT FETCH ERROR:');
+      console.log(err);
+  })
+},
+formatWorkHoursData(){
+  this.workHours.forEach(
+    function(entry, index, arr){
+      entry.hours = Number(entry.hours);
+      entry.runningTotalHours = entry.hours + (index == 0 ? arr[index-1].runningTotalHours : 0);
+      entry.date = Date.parse(entry.date);
+    }
+  );
+},
   gotoTask(tid){
     //alert ('Clicked:' + tid)
-    window.location = 'task.html?taskId=' + itd;
+    window.location = 'task.html?taskId=' + tid;
   }
 },
 
   created(){
     this.fetchProject();
     this.fetchTasks();
+    this.fetchProjectWork();
   }
 }
 )
