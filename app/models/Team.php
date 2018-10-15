@@ -19,9 +19,7 @@ class Team{
     $statement = $db->prepare($sql);
 
     //3. run the results;
-    $success = $statement -> executed(
-
-    );
+    $success = $statement -> executed();
 
     //4. handle the results;
     $arr = [];

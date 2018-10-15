@@ -7,14 +7,14 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="css/dashboard.css">
 
     <title>Project Dashboard</title>
   </head>
   <body>
 
 
-<main id="dashboard" class="container-fluid">
+    <main id="dashboard" class="container-fluid">
       <h1>{{ project.name }}</h1>
       <p><em>{{ project.short_description }}</em></p>
       <div class="row">
@@ -24,15 +24,15 @@
 
         <section class="col">
           <div class="row">
-              <div class="col">
-          <h2> Due date</h2>
-      <div class="ban">{{ pretty_date(project.target_date) }}</div>
-        </div>
-        <div class="col">
-          <h2>Remaining</h2>
-          <div class="ban">{{  days_left }} days</div>
-        </div>
-        </div>
+            <div class="col">
+              <h2>Due date</h2>
+              <div class="ban">{{ pretty_date(project.target_date) }}</div>
+            </div>
+            <div class="col">
+              <h2>Remaining</h2>
+              <div class="ban">{{ days_left }} days</div>
+            </div>
+          </div>
         </section>
 
         <div class="col placeholder">
@@ -41,21 +41,21 @@
       </div> <!-- end row 1, high-level summary information -->
 
       <div class="row">
-        <section class="col" >
+        <section class="col">
           <h2>Spent</h2>
-          <div class="ban"> {{ pretty_currency(project.spent) }} </div>
+          <div class="ban">{{ pretty_currency(project.spent) }}</div>
 
           <h2>Budget</h2>
-          <div class="ban"> {{ pretty_currency(project.budget) }} </div>
+          <div class="ban">{{ pretty_currency(project.budget) }}</div>
 
-          <h2>Projected Spent</h2>
-          <div class="ban"> {{ pretty_currency(project.projected_spend) }} </div>
+          <h2>Projected Spend</h2>
+          <div class="ban">{{ pretty_currency(project.projected_spend) }}</div>
         </section>
         <div class="col placeholder" style="height:200px">
           Burndown chart goes here.
         </div>
-        <div class="col placeholder">
-          Effort chart goes here.
+        <div class="col">
+          <div id="effortChart"></div>
         </div>
       </div> <!-- end row 2, charts -->
 
@@ -68,17 +68,17 @@
               <th>Size</th>
               <th>Assigned Team</th>
               <th>Status</th>
-              <th>StartedDate</th>
+              <th>Started</th>
               <th>Hrs</th>
-              <th>% Completed</th>
+              <th>% Complete</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="task in tasks"
-            :key="task.id"
-            :id = "'task-' + task.id"
-            :class="task.current_sprint ? 'current_sprint' :'' "
-            v-on:click="gotoTask(task.id)">
+                :key="task.id"
+                :id="'task-' + task.id"
+                :class="task.current_sprint ? 'current-sprint' : '' "
+                @click="gotoTask(task.id)">
               <td>{{ task.title }}</td>
               <td>{{ task.type }}</td>
               <td>{{ task.size }}</td>
@@ -91,30 +91,34 @@
           </tbody>
         </table>
       </div> <!-- end row 3, tabular data -->
-</main>
+    </main>
 
-//****moment.js via CDN***//
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <!-- moment.js via CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 
     <!-- development version, includes helpful console warnings -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="JS/dashboard.app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-<script src="JS/tablesort.min.js"></script>
+    <!-- Load Highcharts -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+    <!-- My Vue Controller file: -->
+    <script src="js/dashboard.app.js"></script>
+
+    <!-- Table sort scripts -->
+    <script src="js/tablesort.min.js"></script>
     <script>
-    /** Tablesort plugin from http://tristen.ca/tablesort/demo/**/
-Tablesort.extend('tshirt',function(item){
-
-  return /^X?S|M|X?L|2XL$/.test(item);
-}, function (a,b){
-  var sizes['XS','S','M','L','XL','2XL'];
-  return sizes.indexOf(b) - sizes.indexOf(a);
-});
-
-
-
-new Tablesort(document.getElementById('taskTable'));
-
+      // Tablesort plugin from http://tristen.ca/tablesort/demo/
+      Tablesort.extend('tshirt', function(item) {
+        // Regular expression to test against.
+        return /^X?S|M|X?L|2XL$/.test(item);
+      }, function(a, b) {
+        // Custom sort functionality goes here.
+        // e.g var n = (a > b) ? -1 : 1;
+        var sizes = ['XS', 'S', 'M', 'L', 'XL', '2XL'];
+        return sizes.indexOf(b) - sizes.indexOf(a);
+      });
+      new Tablesort(document.getElementById('taskTable'));
     </script>
   </body>
 </html>
